@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 실습-01</title>
+</head>
+
+<body>
+    <div id="box">나는 박수</div>
+    <div id="box2">나는 박수</div>
+    <div id="box3" onclick="글자바꾸기2()">나는 박수</div>
+
+
+    <script>
+        const BOX = document.getElementById('box');
+        const BOX2 = document.getElementById('box2');
+        const BOX3 = document.getElementById('box3');
+        console.log(BOX, typeof (BOX));
+
+        function 글자바꾸기2() {
+            BOX3.innerText = '나는 원래 친구가 없네^.^'
+            console.log(this);
+            //this는 window를 가르킴...
+        }
+
+        const 글자바꾸기 = function () {
+            this.innerText = 'blah blah blah'
+        }
+
+        BOX.addEventListener('click', 글자바꾸기);
+        //
+        BOX2.onclick = function() {
+            this.innerText = '갑자기 다들 blah blah~'
+        }
+    </script>
+</body>
+
+</html>

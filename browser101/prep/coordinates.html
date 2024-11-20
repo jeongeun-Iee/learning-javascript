@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>prep-coordinates</title>
+  <style>
+    body {
+      background-color: black;
+      overflow-x: hidden;
+    }
+
+    .line {
+      position: absolute;
+      background-color: white;
+    }
+
+    .horizontal {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+    }
+
+    .vertical {
+      width: 1px;
+      height: 100%;
+      left: 50%;
+    }
+
+    .target {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .tag {
+      font-size: 25px;
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(25px, 25px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="line horizontal"></div>
+  <div class="line vertical"></div>
+  <img class="target" src="../APIS/coordinates/img/target.png" alt="">
+  <span class="tag"></span>
+
+
+  <script>
+    const horizontal = document.querySelector('.horizontal');
+    const vertical = document.querySelector('.vertical');
+    const target = document.querySelector('.target');
+    const tag = document.querySelector('.tag');
+
+    document.addEventListener('mousemove', (event) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      console.log(`${x}px, ${y}px`);
+
+    
+      horizontal.style.top = `${y}px`
+      vertical.style.left = `${x}px`
+      target.style.top = `${y}px`
+      target.style.left = `${x}px`
+      tag.style.top = `${y}px`
+      tag.style.left = `${x}px`
+      tag.innerHTML = `${x}px, ${y}px`
+
+    })
+  </script>
+</body>
+
+</html>

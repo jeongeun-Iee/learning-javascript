@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열-04</title>
+</head>
+
+<body>
+    <h1>배열을 공부합니다. 04</h1>
+    <ul id="UL"></ul>
+    <script>
+
+
+        const 걍배열 = ['하나', '두리', '서이', '너이', '다섯'];
+        const 숫자배열 = [10, 28, 4, 38, 6, 45]
+
+
+        // indexOf 으로 index 반환하기...
+        const idx = 걍배열.indexOf('서이');
+        console.log(idx);
+
+        //존재 여부를 판단해서 tr
+        const 있는가 = 걍배열.includes('너이');
+        console.log(있는가);
+
+        const 찾기 = 걍배열.find(el => el === '다섯');
+        console.log(찾기);
+
+        const 찾기2 = 숫자배열.find(el => el > 12);
+        console.log(찾기2);
+
+        const 찾기21 = 숫자배열.findIndex(el => el === "28");
+        console.log(찾기21);
+
+
+        // 새로운 배열을 반환한다.
+        const 찾기3 = 숫자배열.filter(el => el > 12);
+        console.log(찾기3);
+
+        //새로운 배열을 반환한다.
+        const 배열자르기 = 걍배열.slice(0, 3);
+        console.log(배열자르기);
+
+        const 배열순서바꾸기 = 걍배열.reverse(); // 배열자체의 순서를 바꿔버린다.
+        console.log(배열순서바꾸기);
+
+        console.log(걍배열);
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

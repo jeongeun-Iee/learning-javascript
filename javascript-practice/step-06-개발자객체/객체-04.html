@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체-04-객체생성자함수</title>
+</head>
+
+<body>
+    <script>
+        // 1. 객체를 찍어내는 기계를 만드는 옛날 방법.
+       function Lee (name) {
+        this.name = name;
+        this.showName = function () {
+            console.log(this.name)
+        }
+       }
+
+       //인스터스란 무엇인가???
+
+       const 이정응 = new Lee('이정응');
+       이정응.showName();
+
+       const 김정응 = new Lee('김정은');
+       김정은.showName();
+
+       Lee.prototype.group = '오래된사람';
+
+
+       console.log(김정은.group);
+       console.log(이정응.group);
+
+    </script>
+</body>
+
+</html>

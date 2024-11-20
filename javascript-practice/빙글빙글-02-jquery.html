@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .bo {
+            transform: perspective(500px) rotateX(45deg);
+        }
+
+        figure {
+            width: 40px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+            left: 80px;
+            top: 0;
+        }
+
+        figure:nth-of-type(2) {
+            top: 100px;
+            z-index: -1;
+        }
+
+        .circle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+
+            animation: cir 6s infinite linear;
+        }
+
+        .circle span {
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        @keyframes cir {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bo">
+        <div class="circle"></div>
+    </div>
+    <figure></figure>
+    <figure></figure>
+
+</body>
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+
+        const circleText = (txt, h) => {
+            const TXT = [...txt];
+            const DEG = 360 / TXT.length;
+            TXT.forEach((ele, idx) => {
+                $(`<span>${ele}</span>`).css({
+                    position: `absolute`,
+                    top: 0,
+                    left: `50%`,
+                    height: h,
+                    transform: `rotate(${DEG * idx}deg)`,
+                    transformOrigin: `0 100%`,
+                }).appendTo($(`.circle`))
+            });
+        }
+
+        circleText('WEARETHEWORLD', 100)
+
+
+
+
+
+    })
+</script>
+
+</html>

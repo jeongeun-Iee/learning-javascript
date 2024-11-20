@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수-03</title>
+</head>
+
+<body>
+    <div id="App">
+        <span>나는 누구? 여긴 어디?</span>
+        <a href="#">변하게 하기</a>
+    </div>
+    <ul>
+        <li>menu01</li>
+        <li>menu02</li>
+        <li>menu03</li>
+    </ul>
+    <script>
+
+        //화살표 함수에서의 this
+
+        const App = document.querySelector('#App');
+
+        // function 이름 () {
+        //     console.log('leeeeeeeeee')
+        // }
+
+        // $('#App').on('click', function(){
+        // $(this).addClass('on')
+        // $(this).index();
+        // })
+
+
+        //화살표 함수에서는 this가 없다.
+        App.addEventListener('click', (event) => {
+            console.log(event.target, event.currentTarget);
+            // this.style.color = "#f00";
+        });
+
+
+        UL.addEventListener('click', e => {
+            //
+            let TG = e.target;
+
+            // 스프래드 연산자 어려운 거고 나중에 배울 것들... ECMA6
+            const ALLLI = [...UL.children];
+            console.log(ALLLI);
+            ALLLI.forEach(e => e.style.color = '')
+            TG.style.color = "#f00"
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

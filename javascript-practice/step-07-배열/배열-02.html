@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열-02</title>
+</head>
+
+<body>
+    <h1>배열을 공부합니다. 02</h1>
+    <ul id="UL"></ul>
+    <script>
+
+        // 1. 배열을 돌아서(순회) 배열 각각을 표현 - 일반 for.
+        const 걍배열 = ['하나', '두리', '서이', '너이', '다섯'];
+
+        console.log(걍배열.length);
+
+        // for문 - 초기값, 비교값 , 증가값 --- 강사가 for문을 싫어함... 어려움...
+
+        for (i = 0; i < 걍배열.length; i++) {
+            console.log(걍배열[i]);
+        }
+
+        for (i = 걍배열.length - 1; i >= 0; i--) {
+            console.log(걍배열[i]);
+        }
+
+        // for ... in문. i는 index key를 반환한다.
+        for (i in 걍배열) {
+            console.log(i);
+        }
+
+        // for ... of문. i는 value를 반환한다.
+        for (i of 걍배열) {
+            console.log(i);
+        }
+
+        //for문을 이용해서 html을 생성해보았다.
+        for (i of 걍배열) {
+            UL.innerHTML += '<li>' + i + '</li>';
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

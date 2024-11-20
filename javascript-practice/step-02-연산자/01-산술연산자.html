@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자-01-산술연산자</title>
+</head>
+
+<body>
+    <script>
+        let a = 1;
+        let b = 2;
+
+        let A = '1';
+        let B = '2';
+
+        const D = '이정은';
+
+        console.log(a + b);
+
+        let C = A + B;
+        console.log(C, typeof (C));
+
+        let E = a + A;
+        console.log(E) //자동으로 형변환이 일어남... 자바스크립트의 특징.
+        // 이게 뭔 말인가요..........생선님.........?
+
+        console.log(a - b, A - B);
+        console.log(a - B, B - a, A * B, A / B, 1 / 0,);
+
+        let F = 10;
+        let G = 3;
+
+        F % 2 ? console.log('홀수') : console.log('짝수');
+
+        console.log(F % 2, G % 2)
+
+    </script>
+</body>
+
+</html>

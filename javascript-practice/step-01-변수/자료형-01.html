@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형-01</title>
+</head>
+<body>
+    <div id="box">나는 박스다</div>
+    <script>
+        let a = 1;
+        let b = '1';
+        let c = 'true';
+        let d = true;
+        let e;
+        let f = null;
+
+        console.log (
+            a, b, c, d, e, f
+        );
+
+        // 각 변수의 자료형을 찍어봄.
+        // 숫자(number), 문자 (string), 참, 거짓 (boolean), unfined, null(객체);
+
+
+        console.log(
+            typeof (a),
+            typeof (b),
+            typeof (c),
+            typeof (d),
+            typeof (e),
+            typeof (f), // null은 객체다.
+        );
+
+
+        let _this = this;
+        console.log(_this, typeof(_this), _this.document);
+
+        let TA = 0;
+        let TB = '';
+        let TC = false;
+        let TD = !false;
+        let TE = null;
+        let TF = undefined;
+        
+        //참스러운 값과 거짓스러운 값...
+
+        console.log (
+            Boolean(TA),
+            Boolean(TB),
+            Boolean(TC),
+            Boolean(TD),
+            Boolean(TE),
+            Boolean(TF),
+        );
+
+        const 객체 = {
+            name: '이정은',
+            age: 41,
+            work: function () {
+                console.log('잠자기')
+            }
+        }
+
+        console.log(객체.name, 객체['name']);
+
+        const 배열 = [1, 2, 3, 4, 5];
+
+        console.log(배열[0]);
+
+        const 함수 = function() {
+            return '나는 함수';
+        }
+
+        console.log(함수())
+
+    </script>
+</body>
+</html>

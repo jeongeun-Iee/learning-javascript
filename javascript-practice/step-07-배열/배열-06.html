@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열-06</title>
+</head>
+
+<body>
+    <ul id="UL"></ul>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const DATA = [
+                { id: 1, content: "나는 메로나다.", date: "2022년 7월 21일" },
+                { id: 2, content: "나는 바밤바다.", date: "2022년 7월 20일" },
+                { id: 3, content: "나는 월드콘다.", date: "2022년 6월 21일" },
+                { id: 4, content: "나는 거북이다.", date: "2022년 7월 12일" },
+                { id: 5, content: "나는 메로나다.", date: "2022년 3월 10일" }
+            ]
+
+            //const RESULT = DATA.filter(el => el.id !== 3);
+
+            let LIST = DATA.map(data => `<li>${data.content} <button>삭제</button></li>`);
+            let RESULT = [];
+            UL.innerHTML = LIST.join('');
+            let BTN = document.querySelectorAll('#UL button');
+            BTN.forEach((el, idx) => {
+                el.addEventListener('click', (e) => {
+                    console.log(idx);
+                    e.preventDefault();
+                    RESULT = DATA.filter(el => el.id !== idx + 1);
+                    LIST = RESULT.map(data => `<li>${data.content} <button>삭제</button></li>`);
+                    UL.innerHTML = LIST.join('');
+                    let BTN = document.querySelectorAll('#UL button');
+                    console.log(RESULT, BTN)
+                })
+            })
+        })
+
+    </script>
+</body>
+
+</html>

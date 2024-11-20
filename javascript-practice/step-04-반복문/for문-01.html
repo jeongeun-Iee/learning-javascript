@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문-for문-01</title>
+</head>
+
+<body>    
+    <div id="num">0</div>
+    <ul id="list">
+        <li>sum01</li>
+        <li>sum02</li>
+        <li>sum03</li>
+        <li>sum04</li>
+    </ul>
+
+    <script>
+
+        const UL = document.querySelector('#list');
+        console.log(UL);
+
+        const LI = document.querySelector('#list li');
+        console.log(LI);
+
+        for (let t = 0; t < LI.length; t++) {
+           LI[t].style.color = red;
+        }
+
+        LI.forEach(el => el.style.color = 'blue');
+
+        UL.addEventListener('click', function () {
+            console.log(this)
+        })
+
+        // LI.forEach(function(el){
+        //     el.addEventListener('click', function(){
+        //         el.forEach(function(el){
+        //             el.style.color = '';
+        //         })
+        //         el.style.color = 'yellow'
+        //     })
+        // })
+
+        const NUM = document.querySelector('#num');
+        const 자료 = ['하나', '두리', '서희', '넷이', '버섯',]
+
+        LI.forEach((el, idx) => {
+            el.addEventListener('click', function(){
+                LI.forEach(el => el.style.color = 'blue');
+                el.style.color = 'yellow';
+                NUM.innerText = idx +1;
+            })
+        }
+
+        )
+
+
+
+        console.log(자료)
+
+        for (i = 0; i < 자료.length; i++) {
+            console.log(자료[i]);
+        }
+
+        for (i = 1, i < 10; i++) {
+            console.log(i)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

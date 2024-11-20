@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            height: 300vh;
+        }
+
+        .box {
+            position: fixed;
+            inset: 50% auto auto 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box .txtBox {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 1px solid #666;
+        }
+
+        .box .txtBox span {
+            position: absolute;
+            inset: 0 auto auto 50%;
+            font-size: 50px;
+            height: 50%;
+            width: 50px;
+            transform-origin: bottom center;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="box">
+            <div class="txtBox">
+            </div>
+        </div>
+    </section>
+    <script>
+        const ROLLING_BOX = document.querySelector('.box .txtBox');
+        window.addEventListener('scroll', function () {
+            let sct = window.scrollY;
+            ROLLING_BOX.style.transform = 'rotate(' + sct / 2 + 'deg)';
+        });
+
+        function 회전문자(word) {
+            const words = [...word].map(el => '<span>' + el + '</span>').join('');
+            // ... 스프레드 연산자로 문자를 배열로 반환하고 map배열 헬프 함수로 새배열 반환한 후 배열을 문자열로 반환... 
+            ROLLING_BOX.innerHTML = words; // 문자열을 html로 삽입...
+            //console.log(...ROLLING_BOX.children) // children --> html collection 
+            //HTMLCollection
+            //HTMLCollection은 문서 내에 순서대로 정렬된 노드의 컬렉션으로, 유사 배열입니다. 
+            //HTMLCollection을 얻을 수 있는 간단한 방법은 HTML 엘리먼트의 children 프로퍼티에 접근하는 것입니다.
+
+            //NodeList
+            //element.childNodes 프로퍼티나 document.querySelectorAll 메서드로 반환되는 노드의 모음입니다. 
+            //NodeList도 유사 배열인데, forEach 메서드는 가지고 있습니다. 하지만 map, filter 등의 메서드를 사용하려면 위에서 언급한 방법을 이용해 배열로 바꿔주어야 합니다.
+            const SPAN = [...ROLLING_BOX.children]; // html collection을 배열로 반환해서 forEach함수 사용...
+            SPAN.forEach((el, idx) => {
+                el.style.transform = 'translateX(-50%) rotate(' + idx * (360 / SPAN.length) + 'deg)'
+            })
+        }
+        회전문자('mynameisbaboo');
+
+
+    </script>
+</body>
+
+</html>

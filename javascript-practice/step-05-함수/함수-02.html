@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수-02</title>
+</head>
+<body>
+    <div id="App"></div>
+
+    <script>
+        const DIV = document.getElementById('App');
+        console.log(DIV);
+        const 이름쓰기 = (a) => {
+        DIV.innerText = a;
+        }
+
+
+        // 콜백함수 -> 매개변수로 들어오는 함수.
+        
+        DIV.addEventListener('click', function () {
+            이름쓰기('leeeee');
+        })
+        //이름쓰기('leeeee');
+        
+
+    </script>
+</body>
+</html>

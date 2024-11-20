@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자-03-논리연산자</title>
+</head>
+
+<body>
+    <script>
+        let 참거짓 = true;
+        let 거짓 = false;
+        const a = '이정은';
+
+        console.log(참, 거짓);
+        console.log(!참, !거짓); // ! NOT 부정연산자.
+
+        console.log(참 && 거짓, 참 && 참, 거짓 && 거짓) // AND 그리고 연산자. 하나라도 거짓이면 거짓. 둘다 참일 때만 참.
+        console.log(거짓 || 참, 거짓 || 거짓) // OR 또는 연산자. 하나라도 참이면 참.
+
+        a ? console.log(a + ' 진실한 너') : console.log('못땐 넘');
+        a && console.log(a + ' 진실한 너');
+
+        if (a) {
+            console.log(a + ' 진실한 너');
+        } else {
+            console.log('못땐 넘');
+        }
+
+        a && console.log(a + ' 진실한 너');
+
+        if (a) {
+            console.log(a + ' 진실한 너');
+        }
+
+        !a || console.log('못땐 넘');
+
+
+    </script>
+</body>
+
+</html>

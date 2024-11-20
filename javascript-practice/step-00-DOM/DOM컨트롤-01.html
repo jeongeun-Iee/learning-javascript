@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-01</title>
+    <style>
+        * {
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .gnb>ul>li.on a {
+            color: #f00;
+        }
+
+        .content>div {
+            display: none;
+        }
+
+        .content>div.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="gnb">
+        <ul>
+            <li class="on"><a href="">menu01</a></li>
+            <li><a href="">menu02</a></li>
+            <li><a href="">menu03</a></li>
+            <li><a href="">menu04</a></li>
+            <li><a href="">menu05</a></li>
+        </ul>
+    </nav>
+    <section class="sum">
+        <ul>
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+            <li>menu04</li>
+        </ul>
+        <div class="content">
+            <div class="on">content01</div>
+            <div>content02</div>
+            <div>content03</div>
+            <div>content04</div>
+        </div>
+    </section>
+
+    <script>
+        // $(function(){})
+        window.addEventListener('DOMContentLoaded', () => {
+            const UL = document.querySelector('.gnb>ul')
+            const LI = document.querySelectorAll('.gnb>ul>li');
+            console.log(UL, UL.children, [...UL.children], LI);
+
+            LI.forEach(function (el, idx) {
+                el.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    LI.forEach(function (el) {
+                        el.classList.remove('on')
+                    })
+                    el.classList.add('on');
+                    console.log(event.target, event.currentTarget, this)
+                })
+            });
+
+
+            const TUL = document.querySelector('.sum ul');
+            const TLI = document.querySelectorAll('.sum ul li');
+            const TCONTENT = document.querySelectorAll('.content>div');
+
+            TLI.forEach((elm, idx) => {
+                elm.addEventListener('click', () => {
+                    TLI.forEach(el => el.classList.remove('on'));
+                    elm.classList.add('on');
+                    TCONTENT.forEach(el => el.classList.remove('on'))
+                    TCONTENT[idx].classList.add('on');
+                })
+            })
+
+
+
+
+
+
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문-if문-01</title>
+</head>
+<body>
+    <div id="txt"></div>
+    <script>
+
+        let age = 20;
+        //if 만약에 ()이 참으로 판별되면 {} 블록을 실행하라.
+
+        if (age > 9) {
+            console.log('잼민이만 들어오는 곳입니더.')
+        } 
+
+        //논리연산자를 사용한 조건부 실행.
+        age > 9 && console.log('잼민이만 들어오는 곳입니다.');
+
+
+        if (age > 9) {
+            console.log('잼민이만 들어오는 곳입니더.')
+        } else {
+            console.log('하이 잼민')
+        }
+
+        //삼향연산자를 이용한 조건부 실행.
+        age > 9 ? console.log('잼민이만 들어오는 곳입니다.') : console.log('하이 잼민');
+
+        txt.innerText = '나는 잼민이 오르만 산다.';
+
+
+    </script>
+</body>
+</html>

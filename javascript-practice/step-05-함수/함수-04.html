@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수-04</title>
+</head>
+
+<body>
+    <script>
+
+        //콜백함수 -> 함수의 매개변수로 들가는 함수...
+
+        function 일번() {console.log(1); }
+        function 이번() {console.log(2); }
+
+        // 콜백지옥을 만들다가 말앗
+
+        function 나오기(cb) {
+            cb();
+        }
+
+        나오기(이번);
+
+        function x() {
+            
+        }
+
+    </script>
+</body>
+
+</html>
